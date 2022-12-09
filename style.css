@@ -8,6 +8,11 @@ body {
   flex-direction: column;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .img-logo,
 .text-logo {
   width: auto;
@@ -72,4 +77,32 @@ footer {
   display: flex;
   justify-content: center;
   font-size: small;
+}
+
+.container-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: blueviolet;
+  width: 800px;
+  height: 700px;
+}
+
+.name-img {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#name-img {
+  width: 250px;
+  margin-top: 50px;
 }
