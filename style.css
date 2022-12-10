@@ -79,7 +79,7 @@ footer {
   font-size: small;
 }
 
-.container-post {
+.container-main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,4 +105,30 @@ footer {
 #name-img {
   width: 250px;
   margin-top: 50px;
+}
+
+.container-hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hobbies {
+  display: flex;
+}
+
+.card {
+  background-color: #f7990c;
+  color: white;
+  margin: 20px;
+  padding: 15px;
+  flex: 1;
+  box-shadow: 0 2px 5px black;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.card-img {
+  width: 400px;
+  height: 220px;
 }
