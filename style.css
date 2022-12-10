@@ -50,7 +50,7 @@
   opacity: 0.5;
 }
 
-.profile-img{
+.profile-img {
   height: 50%;
   width: 50%;
 }
@@ -128,7 +128,6 @@ section {
 }
 
 .name-bio h1 {
-  border: #525c52 solid 1px;
   font-size: 122px;
   font-family: "Crimson Text", serif;
 }
@@ -150,6 +149,9 @@ section {
   align-items: center;
 }
 
+.main-post {
+  display: flex;
+}
 .hobbies {
   display: flex;
 }
@@ -163,6 +165,8 @@ section {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
   border-radius: 20px;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-img {
@@ -171,23 +175,40 @@ section {
 }
 
 @media screen and (max-width: 1328px) {
-  .container-main{
+  .container-main {
     flex-wrap: wrap;
   }
-  .hobbies{
+  .hobbies {
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 768px) {
-  .container-main{
-    flex-wrap: wrap;
+@media screen and (max-width: 968px) {
+  .card {
+    align-items: center;
   }
-  .hobbies{
-    flex-wrap: wrap;
+}
+@media screen and (max-width: 793) {
+  .main-post {
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 848px) {
+  .name-bio h1,
+  .name h1 {
+    font-size: 100px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .name-bio h1,
+  .name h1 {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 582px) {
+  .main-post {
+    flex-direction: column;
+  }
 }
 
 footer {
