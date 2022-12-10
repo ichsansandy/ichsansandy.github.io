@@ -1,11 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Indie Flower";
   padding: 0;
   margin: 0;
 }
 body {
   display: flex;
   flex-direction: column;
+  background-color: #d8ecd7;
 }
 
 .logo {
@@ -13,22 +16,20 @@ body {
   align-items: center;
 }
 
-.img-logo,
-.text-logo {
-  width: auto;
-  height: 30px;
-  margin-left: 10px;
+div a {
   margin-top: 3px;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
-nav ul {
+.nav-ul {
   margin-right: 2em;
 }
 ul li {
   display: inline-block;
   margin: 4px;
 }
-.container {
+.container-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,23 +44,28 @@ li a:hover {
 }
 
 header {
-  background-color: beige;
   height: 40px;
   width: 100%;
   position: fixed;
   margin-top: 0;
-  border-bottom: 3px salmon solid;
+  background-color: #ebf5eb;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  z-index: 999;
 }
 section {
   margin-top: 40px;
   flex: 1;
 }
 
-.container-post {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: bisque;
+.name-img img {
+  border: 5px solid #f8f8f8;
+  display: block;
+  /* width: 200px;
+  height: 250px; */
+}
+
+.name-img figcaption {
+  text-align: center;
 }
 
 .box {
@@ -71,40 +77,32 @@ section {
   margin-top: 10px;
 }
 
-footer {
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  font-size: small;
-}
 
 .container-main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-
-.name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-color: blueviolet;
-  width: 800px;
-  height: 700px;
+  border: #525c52 solid 1px;
+  
 }
 
 .name-img {
+  border: #525c52 solid 1px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
-#name-img {
-  width: 250px;
-  margin-top: 50px;
+.name-bio h1 {
+  border: #525c52 solid 1px;
+  font-size: 72px;
+  font-family: "Crimson Text", serif;
+}
+.name h1 {
+  border: #525c52 solid 1px;
+  font-size: 72px;
+  font-family: "Crimson Text", serif;
 }
 
 .container-hobby {
@@ -118,12 +116,12 @@ footer {
 }
 
 .card {
-  background-color: #f7990c;
+  background-color: #90a28f;
   color: white;
   margin: 20px;
   padding: 15px;
   flex: 1;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
   border-radius: 20px;
   opacity: 1;
 }
@@ -131,4 +129,21 @@ footer {
 .card-img {
   width: 400px;
   height: 220px;
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 500px) {
+}
+
+footer {
+  background-color: #525c52;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  height: 40px;
 }
