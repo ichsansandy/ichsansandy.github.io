@@ -1,5 +1,60 @@
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
+:root {
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+}
+
+.blue {
+  --paper-color: #a5b9a4;
+  /* --paper-dark: #7c8b7b; */
+  --shadow-size: 3px;
+  --transparent: rgba(213, 224, 249, 0);
+}
+
+.paper {
+  position: relative;
+  background: linear-gradient(to bottom right, var(--paper-color), 20%, var(--transparent)), var(--paper-color);
+  min-width: 250px;
+  max-width: 550px;
+  min-height: 130px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Caveat", cursive;
+  font-size: 1rem;
+  box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-color);
+  margin: auto;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.paper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent)), linear-gradient(to right, var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent));
+}
+
+.top-tape {
+  position: absolute;
+  height: 4vmin;
+  top: -5px;
+  width: 110%;
+  background-color: var(--tape-gray);
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+  opacity: 0.5;
+}
+
+.profile-img{
+  height: 50%;
+  width: 50%;
+}
+
 * {
   font-family: "Indie Flower";
   padding: 0;
@@ -57,17 +112,6 @@ section {
   flex: 1;
 }
 
-.name-img img {
-  border: 5px solid #f8f8f8;
-  display: block;
-  /* width: 200px;
-  height: 250px; */
-}
-
-.name-img figcaption {
-  text-align: center;
-}
-
 .box {
   width: 600px;
   height: 100px;
@@ -77,32 +121,27 @@ section {
   margin-top: 10px;
 }
 
-
 .container-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: #525c52 solid 1px;
-  
-}
-
-.name-img {
-  border: #525c52 solid 1px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
 }
 
 .name-bio h1 {
   border: #525c52 solid 1px;
-  font-size: 72px;
+  font-size: 122px;
   font-family: "Crimson Text", serif;
 }
 .name h1 {
-  border: #525c52 solid 1px;
-  font-size: 72px;
+  font-size: 122px;
   font-family: "Crimson Text", serif;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
 }
 
 .container-hobby {
@@ -131,7 +170,21 @@ section {
   height: 220px;
 }
 
+@media screen and (max-width: 1328px) {
+  .container-main{
+    flex-wrap: wrap;
+  }
+  .hobbies{
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 768px) {
+  .container-main{
+    flex-wrap: wrap;
+  }
+  .hobbies{
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 500px) {
