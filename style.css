@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+/* @import url(https://fonts.googleapis.com/css?family=Indie+Flower); */
 
 :root {
   --tape-gray: #dbd8be;
@@ -54,7 +54,7 @@
 }
 
 * {
-  font-family: "Indie Flower";
+  font-family: "Crimson Text", serif;
   padding: 0;
   margin: 0;
 }
@@ -154,22 +154,58 @@ section {
   display: flex;
 }
 
-.card {
-  background-color: #90a28f;
-  color: white;
-  margin: 20px;
-  padding: 15px;
-  flex: 1;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-  border-radius: 20px;
-  opacity: 1;
+.cards-list {
+  z-index: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.card-img {
-  width: 400px;
-  height: 220px;
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
 }
 
 @media screen and (max-width: 1328px) {
@@ -209,9 +245,9 @@ section {
   }
 }
 @media screen and (max-width: 500px) {
-  img {
-    width: 100%;
-    height: auto;
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
   }
 }
 
