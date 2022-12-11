@@ -126,7 +126,6 @@ section {
 .container-main {
   display: flex;
   flex-direction: column;
-  border: #525c52 solid 1px;
 }
 
 .name-bio h1 {
@@ -252,6 +251,9 @@ section {
   .card-list {
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
+  }
+  .paper {
+    max-width: 300px;
   }
 }
 
