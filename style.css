@@ -1,6 +1,11 @@
 /* @import url(https://fonts.googleapis.com/css?family=Indie+Flower); */
 
 :root {
+  --primary-color: #fefcf3;
+  --secondary-color: #f5ebe0;
+  --highlight-color: #f0dbdb;
+  --dark-color: #dba39a;
+
   --tape-gray: #dbd8be;
   --tape-edge-gray: #b7b49d;
   --transparent: rgba(255, 255, 255, 0);
@@ -8,7 +13,6 @@
 
 .blue {
   --paper-color: #a5b9a4;
-  /* --paper-dark: #7c8b7b; */
   --shadow-size: 3px;
   --transparent: rgba(213, 224, 249, 0);
 }
