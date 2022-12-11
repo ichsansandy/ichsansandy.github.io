@@ -27,8 +27,6 @@
   font-size: 1rem;
   box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-color);
   margin: auto;
-  margin-left: 50px;
-  margin-bottom: 50px;
 }
 
 .paper::after {
@@ -208,6 +206,12 @@ section {
 @media screen and (max-width: 582px) {
   .main-post {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
