@@ -1,269 +1,33 @@
-/* @import url(https://fonts.googleapis.com/css?family=Indie+Flower); */
-
-:root {
-  --primary-color: #fefcf3;
-  --secondary-color: #f5ebe0;
-  --highlight-color: #f0dbdb;
-  --dark-color: #dba39a;
-
-  --tape-gray: #dbd8be;
-  --tape-edge-gray: #b7b49d;
-  --transparent: rgba(255, 255, 255, 0);
-}
-
-.blue {
-  --paper-color: #a5b9a4;
-  --shadow-size: 3px;
-  --transparent: rgba(213, 224, 249, 0);
-}
-
-.paper {
-  position: relative;
-  background: linear-gradient(to bottom right, var(--paper-color), 20%, var(--transparent)), var(--paper-color);
-  min-width: 250px;
-  max-width: 550px;
-  min-height: 130px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Caveat", cursive;
-  font-size: 1rem;
-  box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-color);
-  margin: auto;
-}
-
-.paper::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent)), linear-gradient(to right, var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent));
-}
-
-.top-tape {
-  position: absolute;
-  height: 4vmin;
-  top: -5px;
-  width: 110%;
-  background-color: var(--tape-gray);
-  border-right: 1px dotted var(--tape-edge-gray);
-  border-left: 1px dotted var(--tape-edge-gray);
-  opacity: 0.5;
-}
-
-.profile-img {
-  height: 50%;
-  width: 50%;
-}
-
 * {
-  font-family: "Crimson Text", serif;
-  padding: 0;
   margin: 0;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: #d8ecd7;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-div a {
-  margin-top: 3px;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-.nav-ul {
-  margin-right: 2em;
-}
-ul li {
-  display: inline-block;
-  margin: 4px;
-}
-.container-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li a {
-  text-decoration: none;
-}
-
-li a:hover {
-  text-shadow: 1px 4px 8px black;
-}
-
-header {
-  height: 40px;
+.navbar {
   width: 100%;
-  position: fixed;
-  margin-top: 0;
-  background-color: #ebf5eb;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-  z-index: 999;
-}
-section {
-  margin-top: 40px;
-  flex: 1;
-}
-
-.box {
-  width: 600px;
-  height: 100px;
-  border: solid red 1px;
-  padding: 10px;
-  text-align: justify;
-  margin-top: 10px;
-}
-
-.container-main {
+  height: 7vh;
+  background-color: black;
   display: flex;
-  flex-direction: column;
-}
-
-.name-bio h1 {
-  font-size: 122px;
-  font-family: "Crimson Text", serif;
-}
-.name h1 {
-  font-size: 122px;
-  font-family: "Crimson Text", serif;
-}
-
-.name {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-
-.container-hobby {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-post {
-  display: flex;
-}
-.hobbies {
-  display: flex;
-}
-
-.cards-list {
-  z-index: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.card .card_image {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-}
-
-.card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
-}
-
-.card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
-}
-
-.card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-}
-
-.title-white {
-  color: white;
-}
-
-.title-black {
-  color: black;
-}
-
-@media screen and (max-width: 1328px) {
-  .container-main {
-    flex-wrap: wrap;
-  }
-  .hobbies {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 968px) {
-  .card {
-    align-items: center;
-  }
-}
-@media screen and (max-width: 793) {
-  .main-post {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 848px) {
-  .name-bio h1,
-  .name h1 {
-    font-size: 100px;
-  }
-}
-@media screen and (max-width: 650px) {
-  .name-bio h1,
-  .name h1 {
-    font-size: 70px;
-  }
-}
-@media screen and (max-width: 582px) {
-  .main-post {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 500px) {
-  .card-list {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
-  .paper {
-    max-width: 300px;
-  }
-}
-
-footer {
-  background-color: #525c52;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
-  color: black;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: medium;
-  height: 40px;
+}
+
+.navbar .menu-container {
+  display: flex;
+  width: 75vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  display: relative;
+  font-size: 1.5rem;
+}
+
+.navbar a:hover, .navbar a::after {
+  background-color: red;
+  width: 10px;
+  position: absolute;
 }
