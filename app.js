@@ -13,3 +13,9 @@ const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((element) => observer.observe(element));
 
 
+var typed = new Typed(".auto-type", {
+    strings: ["Software Engineer", "Full Stack Developer", "Back-End Engineer"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true,
+  });
