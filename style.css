@@ -49,7 +49,8 @@ section {
 }
 
 .about-container{
-  width: 776px;
+  width: 40vw;
+  height: 35vh;
 }
 
 .static-sentence span {
@@ -110,3 +111,10 @@ footer {
 }
 
 /* utility class end */
+
+
+@media screen and (max-width:500px)   {
+  .projects{
+    font-size: 10px;
+  }
+}
