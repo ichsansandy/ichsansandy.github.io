@@ -92,11 +92,48 @@ section {
 }
 .blob {
   position: absolute;
+  top: 10%;
 }
 
 .blob:nth-child(2){
   filter: blur(30px);
 }
+
+.contact-container{
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+ width:60vw;
+ align-items: center;
+ gap:7vh;
+ top:25%
+}
+
+.contact-icon-wrapper{
+  display:flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.contact-icon-wrapper a{
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+}
+
+.github{
+  background-image: url(/assets/github-3d-icon.png);
+}
+.linkedin{
+  background-image: url(/assets/linkedin-3d-icon.png);
+}
+.twitter{
+  background-image: url(/assets/twitter-3d.png);
+}
+
+
 /* section end */
 
 /* footer start */
@@ -115,29 +152,14 @@ footer {
   opacity: 0;
   transition: all 1s;
   filter: blur(5px);
-  transform: translateX(-100%);
+  /* transform: translateX(-100%) translateY(-100%); */
 }
 .show {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  /* transform: translateX(0) translateY(0); */
 }
 
-.spacer {
-  width: 100%;
-  aspect-ratio: 900/200;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.wave-background {
-  background-image: url(/layered-waves-haikei.svg);
-}
-
-.flip {
-  transform: rotate(180deg);
-}
 
 /* utility class end */
 
