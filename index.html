@@ -12,12 +12,10 @@
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap" rel="stylesheet" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap");
-    </style>
+
     <script defer src="app.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js" integrity="sha256-ekq8UIBrOC1lgaJmRRV/c50s5Hy/EBKjBD/7nM9dvp0=" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- <header>
@@ -29,15 +27,28 @@
         </div>
       </nav>
     </header> -->
-    <section class="about">
-      <div class="about-container">
-        <p style="font-size: calc(100vw/50)">Hi My Name is Ichsan</p>
-        <div style="font-size: calc(100vw/20); display: flex">
+    <section class="home hidden">
+      <div class="about-container" style="z-index: 3">
+        <p style="font-size: calc(100vw / 50)">Hi My Name is Ichsan</p>
+        <div style="font-size: calc(100vw / 20); display: flex">
           <p class="static-sentence">I'm a <span class="auto-type"></span></p>
         </div>
       </div>
     </section>
-    <div class="spacer wave-background"></div>
+    <section class="about">
+      <div class="skills hidden">
+        <p>
+          ReactJS and Java, are just a few of the technologies I specialize in as a web developer. Whether you need help with front-end design, back-end development, or anything in between, I have the skills and expertise to get the job
+          done
+        </p>
+        <p style="font-size: 20px"></p>
+        <div class="icon html"></div>
+        <div class="icon css"></div>
+        <div class="icon javascript"></div>
+        <div class="icon react"></div>
+        <div class="icon java"></div>
+      </div>
+    </section>
     <section class="projects">
       <div class="hidden">
         <h2>I've done some personal projects</h2>
@@ -46,12 +57,50 @@
         <h2>I've done some personal projects</h2>
       </div>
     </section>
-    <div class="spacer wave-background flip"></div>
     <section class="contact hidden">
-      <h2>Lets Connect</h2>
+      <div class="blob">
+        <svg id="visual" viewBox="0 0 900 600" width="500" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+          <g transform="translate(449.0959015404072 276.3135526691674)">
+            <path
+              id="blob1"
+              d="M129.4 -92.3C170.6 -51.4 209.1 2.6 198 42.6C186.8 82.7 125.9 108.9 63 144.6C0 180.2 -65.1 225.2 -112.8 211.1C-160.5 197 -190.9 123.8 -197 56.6C-203 -10.6 -184.8 -71.7 -147.9 -111.6C-111 -151.5 -55.5 -170.3 -5.7 -165.7C44 -161.1 88.1 -133.2 129.4 -92.3"
+              fill="#BB004B"
+              <!--
+              fill="#BB004B"
+              -->
+              >
+            </path>
+          </g>
+          <g transform="translate(484.1755430857275 285.29286969789155)">
+            <path
+              id="blob2"
+              style="visibility: hidden"
+              d="M110.9 -94.8C135.3 -57.9 140.8 -12.2 140.8 49.9C140.7 112.1 135.2 190.7 99.9 207.8C64.6 224.9 -0.4 180.5 -55 143.1C-109.6 105.8 -153.8 75.5 -182 21.6C-210.1 -32.2 -222.3 -109.6 -189.4 -148.5C-156.4 -187.4 -78.2 -187.7 -17.5 -173.8C43.3 -159.8 86.5 -131.7 110.9 -94.8"
+              fill="#BB004B"></path>
+          </g>
+        </svg>
+      </div>
+      <div class="blob">
+        <svg id="visual" viewBox="0 0 900 600" width="500" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+          <g transform="translate(449.0959015404072 276.3135526691674)">
+            <path
+              id="blobshadow1"
+              d="M129.4 -92.3C170.6 -51.4 209.1 2.6 198 42.6C186.8 82.7 125.9 108.9 63 144.6C0 180.2 -65.1 225.2 -112.8 211.1C-160.5 197 -190.9 123.8 -197 56.6C-203 -10.6 -184.8 -71.7 -147.9 -111.6C-111 -151.5 -55.5 -170.3 -5.7 -165.7C44 -161.1 88.1 -133.2 129.4 -92.3"
+              fill="#BB004B"></path>
+          </g>
+          <g transform="translate(484.1755430857275 285.29286969789155)">
+            <path
+              id="blobshadow2"
+              style="visibility: hidden"
+              d="M110.9 -94.8C135.3 -57.9 140.8 -12.2 140.8 49.9C140.7 112.1 135.2 190.7 99.9 207.8C64.6 224.9 -0.4 180.5 -55 143.1C-109.6 105.8 -153.8 75.5 -182 21.6C-210.1 -32.2 -222.3 -109.6 -189.4 -148.5C-156.4 -187.4 -78.2 -187.7 -17.5 -173.8C43.3 -159.8 86.5 -131.7 110.9 -94.8"
+              fill="#BB004B"></path>
+          </g>
+        </svg>
+      </div>
+      <h2 style="z-index: 6">Lets Connect !!!</h2>
     </section>
-    <footer>
+    <!-- <footer>
       <p>copyright @ 2022 ichsansandy</p>
-    </footer>
+    </footer> -->
   </body>
 </html>

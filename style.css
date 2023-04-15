@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+:root {
+  --primary-color: #202731;
+  --secondary-color: #3b485b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +14,11 @@
 body {
   color: white;
   background-color: #202731;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* navbar start */
@@ -16,10 +26,13 @@ body {
   width: 100%;
   height: 7vh;
   min-height: 65px;
-  background-color: black;
+  background-color: var(--primary-color);
+  z-index: 5;
   display: flex;
   justify-content: center;
   position: fixed;
+  border-bottom: 2px dashed;
+  opacity: 0.9;
 }
 
 .navbar .menu-container {
@@ -33,7 +46,7 @@ body {
   color: white;
   text-decoration: none;
   display: block;
-  font-size: 1.5rem;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -48,7 +61,7 @@ section {
   position: relative;
 }
 
-.about-container{
+.about-container {
   width: 40vw;
   height: 35vh;
 }
@@ -58,20 +71,35 @@ section {
   text-shadow: 0 0 10px #0ef;
 }
 
-
-.projects {
-  background-color: #888277;
-  background-size: cover;
-  aspect-ratio: 960/540;
-  width: 100%;
-  background-image: url(/circle-scatter-haikei.svg);
+.skills {
+  width: 60vw;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 1px solid;
+  display: grid;
+  place-content: center;
+  border-radius: 30px;
+  font-size: 35px;
+  padding: 10px 30px;
 }
 
+.icon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  top: -30px;
+}
+.blob {
+  position: absolute;
+}
+
+.blob:nth-child(2){
+  filter: blur(30px);
+}
 /* section end */
 
 /* footer start */
-
-/* footer end */
 
 footer {
   display: grid;
@@ -80,6 +108,7 @@ footer {
   background-color: #888277;
   padding-block: 10px;
 }
+/* footer end */
 
 /* utility class start */
 .hidden {
@@ -112,9 +141,12 @@ footer {
 
 /* utility class end */
 
+@media screen and (width: 500px) {
+  .about-container p {
+    font-size: 90px;
+  }
 
-@media screen and (max-width:500px)   {
-  .projects{
+  .projects {
     font-size: 10px;
   }
 }
