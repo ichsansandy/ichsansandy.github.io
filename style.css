@@ -275,9 +275,8 @@ footer {
 }
 
 #magiclight-blurry{
-  width: 500px;
+  width: 400px;
   aspect-ratio: 1/1;
-  background-color: white;
   z-index: -100;
   position: fixed;
   left: 50%;
@@ -286,12 +285,23 @@ footer {
   border-radius: 50%;
   background: linear-gradient(to right , tomato, mediumpurple);
   animation: rotate 20s infinite;
-  filter: blur(200px);
+  filter: blur(150px);
+}
+#blurry-mouse-tail{
+  width: 100vw;
+  height: 100vh;
+  display: fixed;
+  /* background-color: white; */
+  z-index: 6;
+  backdrop-filter: blur(100px);
 }
 
 @keyframes rotate {
   from{
     rotate: 0deg;
+  }
+  50%{
+    scale:1 1.5;
   }
   to{
     rotate: 360deg;
