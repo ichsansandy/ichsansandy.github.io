@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
 :root {
   --primary-color: #202731;
   --secondary-color: #3b485b;
@@ -9,6 +10,10 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+ 
+  /* scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory; */
 }
 
 body {
@@ -58,7 +63,9 @@ section {
   place-items: center;
   align-content: center;
   height: 100vh;
+  width: 100vw;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .home-container {
@@ -80,24 +87,100 @@ section {
 }
 
 .skills {
-  width: 60vw;
-  background-color: var(--secondary-color);
+  width: 58vw;
+  /* background-color: var(--secondary-color); */
   color: white;
-  border: 1px solid;
-  display: grid;
-  place-content: center;
-  border-radius: 30px;
+  /* border: 1px solid;
+  border-radius: 30px; */
   font-size: 35px;
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
 }
 
-.icon {
+.skill-icon {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: red;
-  top: -30px;
+  width: 6vw;
+  aspect-ratio: 1/1;
+  /* background-color: red; */
+  background-size: cover;
+  /* top: -30px; */
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  animation:  floaticon 10s ease-in-out infinite;
 }
+
+@keyframes floaticon {
+  0%{
+    scale: 2;
+  }
+  25% {
+    
+    transform: translateY(15px) translateX(-15px) rotate(10deg);
+  }
+  50% {
+    transform: translateX(-15px) rotate(-6deg);
+  }
+  100%{
+    scale: 2;
+  }
+}
+
+.html {
+  top: 20%;
+  left: 13%;
+  background-image: url(/assets/html.png);
+}
+
+.html-background {
+  background-color: #ee926b;
+  z-index: -3;
+  filter: blur(30px);
+}
+
+.css {
+  top: 18%;
+  left: 45.5%;
+  background-image: url(/assets/css-3d.png);
+}
+.css-background {
+  background-color: #5b98e6;
+  z-index: -3;
+  filter: blur(30px);
+}
+
+.javascript {
+  top: 20%;
+  left: 79.5%;
+  background-image: url(/assets/javascript_new_color-removebg-preview.png);
+}
+.javascript-background {
+  background-color: #f0db4f;
+  z-index: -3;
+  filter: blur(30px);
+}
+
+.react {
+  top: 80%;
+  left: 30%;
+  background-image: url(/assets/reactjs.svg);
+}
+.react-background {
+  background-color: #5b98e6;
+  z-index: -3;
+  filter: blur(30px);
+}
+
+.java {
+  top: 75%;
+  left: 65%;
+  background-image: url(assets/java-svg.svg);
+}
+.java-background {
+  background-color: #e76f00;
+  z-index: -3;
+  filter: blur(30px);
+}
+
 .blob {
   position: absolute;
   top: 10%;
@@ -139,7 +222,7 @@ section {
   -o-animation-play-state: paused;
   animation-play-state: paused;
   cursor: pointer;
-  filter: brightness(1.2);
+  filter: brightness(1.115);
 }
 
 @keyframes float {
@@ -181,13 +264,13 @@ footer {
 .hidden {
   opacity: 0;
   transition: all 1s;
-  filter: blur(5px);
-  /* transform: translateX(-100%) translateY(-100%); */
+  /* filter: blur(5px); */
+  /* transform: translateX(-50%) ; */
 }
 .show {
   opacity: 1;
-  filter: blur(0);
-  /* transform: translateX(0) translateY(0); */
+  /* filter: blur(0); */
+  /* transform: translateX(0); */
 }
 
 /* utility class end */
