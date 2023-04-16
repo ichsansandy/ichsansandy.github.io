@@ -41,17 +41,68 @@ document.body.onpointermove = (event) => {
 };
 
 const colorChange = document.querySelectorAll(".html, .css, .javascript, .java, .react");
-console.log(colorChange);
 colorChange.forEach((element) => {
-  const defaultColor = magiclight.style.background
+  const defaultColor = magiclight.style.background;
 
   element.addEventListener("mouseover", () => {
-    const color = element.dataset.color
-    magiclight.style.background = color
+    const color = element.dataset.color;
+    magiclight.style.background = color;
   });
 
-  element.addEventListener("mouseout",()=>{
-    console.log("mouse keluar")
+  element.addEventListener("mouseout", () => {
     magiclight.style.background = defaultColor;
-  })
+  });
 });
+
+const gallery = document.querySelector("ul");
+const galleryItems = gallery.children;
+const container = document.querySelector(".projects");
+let moveVal = 0;
+
+let dragging = false,
+  mouselocation,
+  gallerylocation;
+
+const easeOutQuad = (t) => {
+  return t * (2 - t);
+};
+
+
+moveGallery = () => {
+  moveVal = easeOutQuad(window.scrollY * 0.0025);
+  gallery.style.transform = `rotateZ(-2deg) translateX(${moveVal}%)`;
+
+  requestAnimationFrame(moveGallery);
+};
+
+requestAnimationFrame(moveGallery);
+
+const dragStart = (e) => {
+  dragging = true;
+  mouselocation = e.pageX;
+  gallerylocation = container.scrollLeft;
+};
+
+const dragActive = (e) => {
+  if (!dragging) return;
+  
+  let offset = e.pageX - mouselocation;
+  container.scrollLeft = gallerylocation - offset;
+
+  
+
+};
+const dragStop = (e) => {
+  dragging = false;
+  mouselocation = e.pageX;
+  gallerylocation = container.scrollLeft;
+};
+
+gallery.addEventListener("mousedown", dragStart);
+gallery.addEventListener("mousemove", dragActive);
+gallery.addEventListener("mouseup", dragStop);
+
+const firstSlideClone = sliderItems[0].cloneNode(true);
+slider.appendChild(firstSlideClone);
+let slideIndex = 0;
+const slideWidth = sliderItems[0].offsetWidth;

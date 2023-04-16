@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 :root {
   --primary-color: #202731;
   --secondary-color: #3b485b;
@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  
+
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -110,21 +110,20 @@ section {
   z-index: 0;
   top: 50%;
   left: 50%;
-  animation:  floaticon 10s ease-in-out infinite;
+  animation: floaticon 10s ease-in-out infinite;
 }
 
 @keyframes floaticon {
-  0%{
+  0% {
     scale: 2;
   }
   25% {
-    
     transform: translateY(15px) translateX(-15px) rotate(10deg);
   }
   50% {
     transform: translateX(-15px) rotate(-6deg);
   }
-  100%{
+  100% {
     scale: 2;
   }
 }
@@ -135,7 +134,7 @@ section {
   background-image: url(/assets/html.png);
 }
 
-.skill-icon:hover{
+.skill-icon:hover {
   background-color: transparent;
 }
 
@@ -187,6 +186,41 @@ section {
   background-color: #e76f00;
   z-index: -3;
   filter: blur(30px);
+}
+
+.projects::before {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  top: 0;
+  left: 50%;
+}
+
+.projects {
+  display: grid;
+  align-content: center;
+  overflow: hidden;
+}
+
+.projects ul {
+  margin-top: 50px;
+  margin-left: 22vw;
+  list-style-type: none;
+  gap: 20vh;
+  display: flex;
+  transition: transform 0.6s ease;
+
+}
+.projects li {
+  width: 38vw;
+  aspect-ratio: 6/4;
+  background-color: red;
+  cursor: grab;
+  border-radius: 2vw;
+  display: grid;
+  place-content: center;
+  rotate: -3deg;
 }
 
 .blob {
@@ -281,13 +315,13 @@ footer {
   /* transform: translateX(0); */
 }
 
-#magiclight-blurry{
+#magiclight-blurry {
   width: 400px;
   aspect-ratio: 1/1;
   z-index: -100;
   position: fixed;
   left: 50%;
-  top:50%;
+  top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
   background: linear-gradient(to right, tomato, mediumpurple);
@@ -296,7 +330,7 @@ footer {
   filter: blur(150px);
   opacity: 0.8;
 }
-#blurry-mouse-tail{
+#blurry-mouse-tail {
   width: 100vw;
   height: 100vh;
   display: fixed;
@@ -306,22 +340,18 @@ footer {
 }
 
 @keyframes rotate {
-  from{
+  from {
     rotate: 0deg;
   }
-  50%{
-    scale:1 1.5;
+  50% {
+    scale: 1 1.5;
   }
-  to{
+  to {
     rotate: 360deg;
   }
 }
 
-
-
 /* utility class end */
-
-
 
 @media screen and (width: 500px) {
   .about-container p {
