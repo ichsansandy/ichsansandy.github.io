@@ -31,8 +31,27 @@ const magiclight = document.querySelector("#magiclight-blurry");
 
 document.body.onpointermove = (event) => {
   const { x, y } = event;
-  magiclight.animate({
-    left : `${x}px`,
-    top : `${y}px`
-  }, {duration:3000, fill:"forwards"})
+  magiclight.animate(
+    {
+      left: `${x}px`,
+      top: `${y}px`,
+    },
+    { duration: 3000, fill: "forwards" }
+  );
 };
+
+const colorChange = document.querySelectorAll(".html, .css, .javascript, .java, .react");
+console.log(colorChange);
+colorChange.forEach((element) => {
+  const defaultColor = magiclight.style.background
+
+  element.addEventListener("mouseover", () => {
+    const color = element.dataset.color
+    magiclight.style.background = color
+  });
+
+  element.addEventListener("mouseout",()=>{
+    console.log("mouse keluar")
+    magiclight.style.background = defaultColor;
+  })
+});

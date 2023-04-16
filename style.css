@@ -10,7 +10,11 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
- 
+  
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   /* scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory; */
@@ -101,10 +105,9 @@ section {
   position: absolute;
   width: 6vw;
   aspect-ratio: 1/1;
-  /* background-color: red; */
   background-size: cover;
   /* top: -30px; */
-  z-index: -1;
+  z-index: 0;
   top: 50%;
   left: 50%;
   animation:  floaticon 10s ease-in-out infinite;
@@ -130,6 +133,10 @@ section {
   top: 20%;
   left: 13%;
   background-image: url(/assets/html.png);
+}
+
+.skill-icon:hover{
+  background-color: transparent;
 }
 
 .html-background {
@@ -283,9 +290,11 @@ footer {
   top:50%;
   translate: -50% -50%;
   border-radius: 50%;
-  background: linear-gradient(to right , tomato, mediumpurple);
+  background: linear-gradient(to right, tomato, mediumpurple);
+  /* background-color: silver; */
   animation: rotate 20s infinite;
   filter: blur(150px);
+  opacity: 0.8;
 }
 #blurry-mouse-tail{
   width: 100vw;
