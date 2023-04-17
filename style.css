@@ -217,7 +217,6 @@ section {
 }
 
 .swiper-slide {
-  text-align: center;
   background-color: red;
   aspect-ratio: 7/6;
   border-radius: 30px;
@@ -239,7 +238,7 @@ section {
   text-align: left;
   width: 80%;
   display: none;
-  animation: cardinfo 1s ease-in-out;
+  animation: cardinfo 1.5s ease-in-out;
 }
 
 .swiper-slide-active:hover::after
@@ -333,7 +332,7 @@ section {
   transform: rotate(-14deg);
 }
 .twitter {
-  background-image: url(/assets/twitter-3d.png);
+  background-image: url(/assets/instagram-3d.png);
   transform: translateY(-17px);
 }
 
