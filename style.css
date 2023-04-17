@@ -15,9 +15,11 @@
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 
-  /* scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory; */
+  scroll-snap-type: y;
+  /* mandatory; */
 }
 
 body {
@@ -195,9 +197,9 @@ section {
   font-size: 35px;
   height: 100px;
   /* background-color: white; */
-  top: 10%;
+  top: 89%;
   left: 50%;
-  transform: translateX(-167px);
+  transform: translateX(-167px) perspective(400px) rotateX(43deg)  ;
 }
 
 .projects {
@@ -222,12 +224,13 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.55), -5px -5px 30px 7px rgba(0,0,0,0.22);
   backdrop-filter: blur(15px);
   position: relative;
 }
 
-.swiper-slide::after {
+.swiper-slide-active::after
+/* .swiper-slide::after  */ {
   position: absolute;
   content: "Here some title for my project";
   bottom: -5%;
@@ -236,11 +239,11 @@ section {
   text-align: left;
   width: 80%;
   display: none;
-  animation: cardinfo 1s ease-in-out ;
-  
+  animation: cardinfo 1s ease-in-out;
 }
 
-.swiper-slide:hover::after {
+.swiper-slide-active:hover::after
+/* .swiper-slide:hover::after  */ {
   display: block;
 }
 

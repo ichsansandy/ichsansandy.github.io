@@ -75,3 +75,5 @@ var swiper = new Swiper(".mySwiper", {
     // slideShadows: true,
   },
 });
+
+// card chat gpt draging
