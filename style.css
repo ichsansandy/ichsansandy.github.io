@@ -235,19 +235,22 @@ section {
   font-size: 45px;
   text-align: left;
   width: 80%;
-  visibility: hidden;
+  display: none;
+  animation: cardinfo 1s ease-in-out ;
+  
 }
 
-.swiper-slide::after:hover {
-  animation: cardinfo 1s ease-in-out  alternate;
+.swiper-slide:hover::after {
+  display: block;
 }
 
 @keyframes cardinfo {
   0% {
-    transform: translateY(-10px);
+    opacity: 0;
+    transform: translateY(20%);
   }
-  100% {
-    visibility: visible;
+  50% {
+    opacity: 1;
   }
 }
 
