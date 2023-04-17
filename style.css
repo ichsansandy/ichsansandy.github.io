@@ -74,7 +74,7 @@ section {
 }
 
 .home-container {
-  width: 40vw;
+  width: 50vw;
   height: 45vh;
 }
 
@@ -189,43 +189,39 @@ section {
 }
 
 .projects::before {
+  content: "Here some of them";
   position: absolute;
-  width: 100px;
+  /* width: 200px; */
   height: 100px;
-  background-color: white;
+  /* background-color: white; */
   top: 0;
   left: 50%;
+  /* transform: translateX(-100px); */
 }
 
 .projects {
   display: grid;
   align-content: center;
-  overflow: hidden;
 }
 
-.projects ul {
-  margin-top: 50px;
-  margin-left: 22vw;
-  list-style-type: none;
-  gap: 20vh;
-  display: flex;
-  transition: transform 0.6s ease;
 
+.blob-container{
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
 }
-.projects li {
-  width: 38vw;
-  aspect-ratio: 6/4;
-  background-color: red;
-  cursor: grab;
-  border-radius: 2vw;
-  display: grid;
-  place-content: center;
-  rotate: -3deg;
+
+.blob-container h2{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translateX(-93.7px);
 }
 
 .blob {
   position: absolute;
-  top: 10%;
+  transform: scale(1.6);
 }
 
 .blob:nth-child(2) {
@@ -327,15 +323,10 @@ footer {
   background: linear-gradient(to right, tomato, mediumpurple);
   /* background-color: silver; */
   animation: rotate 20s infinite;
-  filter: blur(150px);
-  opacity: 0.8;
 }
 #blurry-mouse-tail {
-  width: 100vw;
-  height: 100vh;
   display: fixed;
-  /* background-color: white; */
-  z-index: 6;
+  z-index: -99;
   backdrop-filter: blur(100px);
 }
 
@@ -353,12 +344,26 @@ footer {
 
 /* utility class end */
 
-@media screen and (width: 500px) {
-  .about-container p {
-    font-size: 90px;
+@media (max-width: 600px) {
+  /* .home-container{
+    width: 70vw;
+  } */
+  
+  .home-container .text-name{
+    font-size: 5vw
   }
-
+  .home-container .text-animated{
+    font-size: 10vw;
+  }
+  
   .projects {
     font-size: 10px;
+  }
+
+  .contact-container{
+    top: 20px;
+  }
+  .contact-icon-wrapper{
+    flex-direction: column;
   }
 }
