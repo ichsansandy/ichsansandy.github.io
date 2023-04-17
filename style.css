@@ -192,11 +192,12 @@ section {
   content: "Here some of them";
   position: absolute;
   /* width: 200px; */
+  font-size: 35px;
   height: 100px;
   /* background-color: white; */
-  top: 0;
+  top: 10%;
   left: 50%;
-  /* transform: translateX(-100px); */
+  transform: translateX(-167px);
 }
 
 .projects {
@@ -204,17 +205,62 @@ section {
   align-content: center;
 }
 
+.swiper {
+  width: 100%;
+  height: auto;
+}
 
-.blob-container{
+.swiper-wrapper {
+  padding-block: 100px;
+}
+
+.swiper-slide {
+  text-align: center;
+  background-color: red;
+  aspect-ratio: 7/6;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  position: relative;
+}
+
+.swiper-slide::after {
+  position: absolute;
+  content: "Here some title for my project";
+  bottom: -5%;
+  left: -10px;
+  font-size: 45px;
+  text-align: left;
+  width: 80%;
+  visibility: hidden;
+}
+
+.swiper-slide::after:hover {
+  animation: cardinfo 1s ease-in-out  alternate;
+}
+
+@keyframes cardinfo {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.blob-container {
   position: relative;
   top: 0;
   width: 100vw;
   height: 10vh;
 }
 
-.blob-container h2{
+.blob-container h2 {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 50%;
   transform: translateX(-93.7px);
 }
@@ -321,13 +367,13 @@ footer {
   translate: -50% -50%;
   border-radius: 50%;
   background: linear-gradient(to right, tomato, mediumpurple);
-  /* background-color: silver; */
   animation: rotate 20s infinite;
+  filter: blur(100px);
 }
 #blurry-mouse-tail {
   display: fixed;
   z-index: -99;
-  backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
 }
 
 @keyframes rotate {
@@ -348,22 +394,22 @@ footer {
   /* .home-container{
     width: 70vw;
   } */
-  
-  .home-container .text-name{
-    font-size: 5vw
+
+  .home-container .text-name {
+    font-size: 5vw;
   }
-  .home-container .text-animated{
+  .home-container .text-animated {
     font-size: 10vw;
   }
-  
+
   .projects {
     font-size: 10px;
   }
 
-  .contact-container{
+  .contact-container {
     top: 20px;
   }
-  .contact-icon-wrapper{
+  .contact-icon-wrapper {
     flex-direction: column;
   }
 }

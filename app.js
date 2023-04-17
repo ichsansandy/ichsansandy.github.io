@@ -54,3 +54,24 @@ colorChange.forEach((element) => {
   });
 });
 
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  loop: true,
+  freeMode: {
+    enabled: true,
+    momentumRatio: 0.2,
+    momentumVelocityRatio: 0.4,
+    sticky: true,
+  },
+
+  coverflowEffect: {
+    rotate: 20,
+    stretch: 0,
+    depth: 1,
+    modifier: 1,
+    // slideShadows: true,
+  },
+});
