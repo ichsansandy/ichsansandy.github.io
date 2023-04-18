@@ -226,21 +226,18 @@ section {
   box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.55), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(15px);
   position: relative;
-  /* overflow: hidden; */
 }
 
-.swiper-slide-active:hover > .kelar-in{
-  transform: scale(1.1);
+.swiper-slide-active:hover{
+  background-size: 160%;
+  transition: background-size 1s;
 }
 
-.slide-background {
-  width: 100%;
-  height: 100%;
-}
 
 .kelar-in{
   background-image: url(/assets/kelarin-ilustration.jpg);
-  background-size: cover;
+  background-size: contain;
+  background-size: 150%;
   background-repeat: no-repeat;
   background-position: center;
 }
