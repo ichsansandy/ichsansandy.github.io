@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+@import url("https://fonts.cdnfonts.com/css/antique-olive");
 :root {
   --primary-color: #202731;
   --secondary-color: #3b485b;
@@ -199,7 +200,7 @@ section {
   /* background-color: white; */
   top: 89%;
   left: 50%;
-  transform: translateX(-167px) perspective(400px) rotateX(43deg)  ;
+  transform: translateX(-167px) perspective(400px) rotateX(43deg);
 }
 
 .projects {
@@ -223,7 +224,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.55), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.55), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(15px);
   position: relative;
 }
@@ -238,21 +239,122 @@ section {
   text-align: left;
   width: 80%;
   display: none;
-  animation: cardinfo 1.5s ease-in-out;
+  animation: cardinfo 1.5s ease-in-out forwards;
 }
 
-.swiper-slide-active:hover::after
-/* .swiper-slide:hover::after  */ {
+
+.icon {
+  width: 10%;
+  aspect-ratio: 1/1;
+  
+  background-color: #2a2a2a;
+  border-radius: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  padding: 5px;
+}
+.react-icon {
+  background-image: url(/assets/reactjs.svg);
+}
+
+.tailwind-icon {
+  background-image: url(/assets/tailwind-svgrepo-com.svg);
+}
+
+.java-icon {
+  background-image: url(/assets/java-svg.svg);
+}
+
+.mysql-icon {
+  background-image: url(/assets/mysql-logo-svgrepo-com.svg);
+}
+
+.firestore-icon {
+  background-image: url(/assets/firestore-svgrepo-com.svg);
+}
+
+.slide-tech-stack {
+  display: none;
+}
+
+.slide-tech-stack-frontend {
+  position: absolute;
+  left: -5%;
+  bottom: 25%;
+  width: 100%;
+  display: flex;
+  gap: 1%;
+
+  animation: cardinfo 1.5s ease-in-out forwards;
+}
+.slide-tech-stack-backend {
+  position: absolute;
+  left: -5%;
+  bottom: 8%;
+  width: 100%;
+  display: flex;
+  gap: 1%;
+  
+  animation: cardinfo 1.5s ease-in-out forwards;
+}
+.slide-tech-stack-db {
+  position: absolute;
+  left: -5%;
+  bottom: -9%;
+  width: 100%;
+  display: flex;
+  gap: 1%;
+
+  animation: cardinfo 1.5s ease-in-out forwards;
+}
+
+.slide-info-brief {
+  font-size: 25px;
+  position: absolute;
+  left: -5%;
+  top: 5%;
+  width: 100%;
+
+  display: none;
+  animation: cardinfo 1.5s ease-in-out forwards;
+}
+
+.slide-info-footer {
+  font-family: "Antique Olive", sans-serif;
+  font-size: 35px;
+  line-height: 48px;
+  font-weight: 900;
+  letter-spacing: -3px;
+
+  position: absolute;
+  left: -5%;
+  top: -10%;
+  width: 80%;
+  display: none;
+  animation: cardinfo 1.5s ease-in-out forwards;
+}
+
+.swiper-slide-active:hover > .slide-tech-stack,
+.swiper-slide-active:hover > .slide-info-brief,
+.swiper-slide-active:hover > .slide-info-footer {
   display: block;
 }
+
+/* .swiper-slide-active:hover::after{
+  display: block;
+} */
 
 @keyframes cardinfo {
   0% {
     opacity: 0;
-    transform: translateY(20%);
   }
   50% {
     opacity: 1;
+  }
+  100% {
+    transform: translateY(-20%);
   }
 }
 
