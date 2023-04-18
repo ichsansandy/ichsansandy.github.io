@@ -218,7 +218,6 @@ section {
 }
 
 .swiper-slide {
-  background-color: red;
   aspect-ratio: 7/6;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -227,21 +226,24 @@ section {
   box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.55), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(15px);
   position: relative;
+  /* overflow: hidden; */
 }
 
-.swiper-slide-active::after
-/* .swiper-slide::after  */ {
-  position: absolute;
-  content: "Here some title for my project";
-  bottom: -5%;
-  left: -10px;
-  font-size: 45px;
-  text-align: left;
-  width: 80%;
-  display: none;
-  animation: cardinfo 1.5s ease-in-out forwards;
+.swiper-slide-active:hover > .kelar-in{
+  transform: scale(1.1);
 }
 
+.slide-background {
+  width: 100%;
+  height: 100%;
+}
+
+.kelar-in{
+  background-image: url(/assets/kelarin-ilustration.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .icon {
   width: 10%;
@@ -335,6 +337,7 @@ section {
   display: none;
   animation: cardinfo 1.5s ease-in-out forwards;
 }
+
 
 .swiper-slide-active:hover > .slide-tech-stack,
 .swiper-slide-active:hover > .slide-info-brief,
