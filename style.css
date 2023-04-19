@@ -229,8 +229,20 @@ section {
 }
 
 .swiper-slide-active:hover {
-  background-size: 160%;
-  transition: background-size 1s;
+  /* background-size: 160%; */
+  animation: scaleup 1.5s forwards ease-in;
+}
+
+@keyframes scaleup {
+  to {
+    background-size: 170%;
+  }
+}
+
+@keyframes scaledown {
+  to {
+    background-size: 150%;
+  }
 }
 
 .slide-background {

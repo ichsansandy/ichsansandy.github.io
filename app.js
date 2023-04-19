@@ -54,6 +54,8 @@ colorChange.forEach((element) => {
   });
 });
 
+// slider image caraousel
+
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
