@@ -230,12 +230,12 @@ section {
 
 .swiper-slide-active:hover {
   /* background-size: 160%; */
-  animation: scaleup 1.5s forwards ease-in;
+  animation: scaleup 1.5s ease-in-out;
 }
 
 @keyframes scaleup {
   to {
-    background-size: 170%;
+    background-size: 160%;
   }
 }
 
