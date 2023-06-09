@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
-@import url("https://fonts.cdnfonts.com/css/antique-olive");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.cdnfonts.com/css/antique-olive');
 
 :root {
   --primary-color: #202731;
@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -193,7 +193,7 @@ section {
 }
 
 .projects::before {
-  content: "Here some of them";
+  content: 'Here some of them';
   position: absolute;
   /* width: 200px; */
   font-size: 35px;
@@ -246,36 +246,30 @@ section {
 }
 
 .slide-background {
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 150%;
 }
 
 .kelar-in {
   background-image: url(/assets/kelarin-ilustration.jpg);
-  background-size: 150%;
 }
 
 .timeless {
   background-image: url(/assets/timeless.jpg);
-  background-size: 150%;
 }
 
 .tower {
   background-image: url(/assets/hardwork.jpg);
-  background-size: 150%;
 }
 .flower {
   background-image: url(/assets/flower.jpg);
-  background-size: 150%;
 }
 .room {
   background-image: url(/assets/room.jpg);
-  background-size: 150%;
 }
 .experiment {
   background-image: url(/assets/experiment.jpg);
-  background-size: 150%;
 }
 
 .icon {
@@ -314,35 +308,26 @@ section {
   display: none;
 }
 
+.slide-tech-stack-backend,
+.slide-tech-stack-db,
 .slide-tech-stack-frontend {
   position: absolute;
   left: -5%;
-  bottom: 25%;
   width: 100%;
   display: flex;
   gap: 1%;
 
   animation: cardinfo 1.5s ease-in-out forwards;
+}
+
+.slide-tech-stack-frontend {
+  bottom: 25%;
 }
 .slide-tech-stack-backend {
-  position: absolute;
-  left: -5%;
   bottom: 8%;
-  width: 100%;
-  display: flex;
-  gap: 1%;
-
-  animation: cardinfo 1.5s ease-in-out forwards;
 }
 .slide-tech-stack-db {
-  position: absolute;
-  left: -5%;
   bottom: -9%;
-  width: 100%;
-  display: flex;
-  gap: 1%;
-
-  animation: cardinfo 1.5s ease-in-out forwards;
 }
 
 .slide-info-brief {
@@ -357,7 +342,7 @@ section {
 }
 
 .slide-info-footer {
-  font-family: "Antique Olive", sans-serif;
+  font-family: 'Antique Olive', sans-serif;
   font-size: 35px;
   line-height: 48px;
   font-weight: 900;
