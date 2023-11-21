@@ -1,0 +1,58 @@
+---
+
+---
+
+<div
+	id="darkmodebutton"
+	class="absolute left-[50%] top-[50%] flex aspect-square w-[54px] translate-x-[-50%] translate-y-[-50%] transform cursor-pointer items-center justify-center bg-background hover:opacity-60 md:w-[64px]"
+	
+>
+	<div
+		id="sun"
+		class="sun relative aspect-square w-[42%] rounded-full border-4 border-background bg-content after:bg-background"
+	>
+		<div
+			class="line1 absolute left-[50%] top-[50%] z-[-1] h-[0.75px] w-[220%] translate-x-[-50%] translate-y-[-50%] transform bg-content"
+		>
+		</div>
+		<div
+			class="line2 absolute left-[50%] top-[50%] z-[-1] h-[0.75px] w-[220%] translate-x-[-50%] translate-y-[-50%] rotate-90 transform bg-content"
+		>
+		</div>
+		<div
+			class="line3 absolute left-[50%] top-[50%] z-[-1] h-[0.75px] w-[220%] translate-x-[-50%] translate-y-[-50%] rotate-45 transform bg-content"
+		>
+		</div>
+		<div
+			class="line4 absolute left-[50%] top-[50%] z-[-1] h-[0.75px] w-[220%] translate-x-[-50%] translate-y-[-50%] -rotate-45 transform bg-content"
+		>
+		</div>
+	</div>
+</div>
+
+
+<style>
+	.sun div {
+		transition: width 0.5s;
+	}
+
+	.sun::after {
+		content: '';
+		width: 100%;
+		aspect-ratio: 1;
+		position: absolute;
+		top: -150%;
+		right: -150%;
+		transition: 0.5s;
+		border-radius: 50%;
+	}
+
+	.sun.night::after {
+		top: -25%;
+		right: -25%;
+	}
+
+	.sun.night div {
+		width: 0px;
+	}
+</style>

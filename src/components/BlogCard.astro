@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets'
+import { type CollectionEntry } from 'astro:content'
+import { getFormattedDate } from '../utils/getFormattedDate'
+
+type Props = {
+	blog: CollectionEntry<'blogs'>
+}
+
+const { blog } = Astro.props
+---
+
+<a
+	class="relative grid h-fit max-w-[650px] justify-center rounded-2xl border-background odd:justify-self-end even:justify-self-start"
+	href={`/blog/${blog.slug}`}
+>
+	<Image
+		src={blog.data.image}
+		alt={blog.data.title}
+		width={600}
+		height={600 / 1.5}
+		format="webp"
+		class="aspect-thumbnail rounded-2xl object-cover shadow-xl contrast-50"
+		transition:name={`blog-image-${blog.data.title}`}
+	/>
+	<h1
+		class="absolute left-3 top-4 w-8/12 rounded-lg text-lg font-semibold text-content mix-blend-normal sm:text-4xl"
+		transition:name={`blog-title-${blog.data.title}`}
+	>
+		<span class="[text-wrap: balance]">
+			{blog.data.title}
+		</span>
+	</h1>
+	<div class="absolute bottom-4 left-4 flex items-center gap-3">
+		<Image
+			src={blog.data.author.avatar}
+			alt={blog.data.author.name}
+			width={100}
+			height={100}
+			format="webp"
+			class="aspect-thumbnail aspect-square w-10 rounded-full object-cover shadow-xl sm:w-14"
+		/>
+		<div class="text-xs sm:text-base">
+			<h1 class="mb-1 capitalize">
+				{blog.data.author.name.split('-').join(' ')}
+			</h1>
+			<p>
+				{getFormattedDate(blog.data.date)}
+			</p>
+		</div>
+	</div>
+</a>

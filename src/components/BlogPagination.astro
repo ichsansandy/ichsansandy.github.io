@@ -1,0 +1,25 @@
+---
+
+const { page } = Astro.props
+---
+
+<div class="flex justify-around pt-10">
+	{
+		page.url.prev ? (
+			<a href={page.url.prev} class="rounded-xl bg-secondary w-36 text-center py-3 text-xl text-white">
+				Newer Post
+			</a>
+		) : (
+			<div />
+		)
+	}
+	{
+		page.url.next ? (
+			<a href={page.url.next} class="rounded-xl bg-secondary w-36 text-center py-3 text-xl text-white">
+				Older Post
+			</a>
+		) : (
+			<div />
+		)
+	}
+</div>

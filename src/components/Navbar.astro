@@ -1,0 +1,27 @@
+---
+import DarkModeButton from '../components/DarkModeButton.astro'
+
+const links = [
+	{ to: '/', name: 'Hm.', ref: '' },
+	{ to: '/blog/1', name: 'Blg.', ref: 'blog' }
+]
+---
+
+<nav
+	class="absolute top-0 z-10 flex w-full justify-between px-5 py-4 text-content sm:mx-[10vw] sm:w-4/5"
+>
+	{
+		links.map((link) => (
+			<a class="relative px-3 py-2 sm:text-[20px]" href={link.to}>
+				<span>{link.name}</span>
+				{link.ref === Astro.url.pathname.split('/')[1] && (
+					<div
+						class="absolute inset-0 -z-10 rounded-2xl bg-secondary px-3 py-4"
+						transition:name="navbar"
+					/>
+				)}
+			</a>
+		))
+	}
+	<DarkModeButton />
+</nav>

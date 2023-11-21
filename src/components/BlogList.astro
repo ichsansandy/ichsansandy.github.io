@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import BlogCard from './BlogCard.astro'
+
+
+type Props = {
+	blogs: CollectionEntry<'blogs'>[]
+}
+
+const { blogs } = Astro.props
+
+//sort blog by date
+---
+
+<div class="grid grid-cols-2 gap-10 max-md:grid-cols-1 max-sm:gap-y-8">
+	{blogs.map((blog) => <BlogCard blog={blog} />)}
+</div>

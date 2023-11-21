@@ -1,0 +1,31 @@
+---
+import BlogList from '../../components/BlogList.astro'
+import BlogPagination from '../../components/BlogPagination.astro'
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { sortBlogByDate } from '../../utils/sortBlogByDate'
+
+export const getStaticPaths = async ({ paginate }) => {
+	// Load your data with fetch(), Astro.glob(), etc.
+	const allBlogs = await getCollection('blogs')
+	allBlogs.sort(sortBlogByDate)
+
+	// Return a paginated collection of paths for all posts
+	return paginate(allBlogs, { pageSize: 4 })
+}
+
+const { page } = Astro.props
+---
+
+<Layout title="Blog 🗒">
+	<main class="mx-[10vw] pt-[72px] sm:pt-[78px]">
+		<div class="mb-8 flex items-center border-b-2 pb-6 sm:justify-center">
+			<h1 class="text-5xl sm:text-8xl">Blog</h1>
+			<p class="max-w-[150px] pl-3 text-xs sm:max-w-[250px] sm:text-xl">
+				It&apos;s definitely not a blog, more like a random writing, hope you like to read it
+			</p>
+		</div>
+		<BlogList blogs={page.data} />
+		<BlogPagination page={page} />
+	</main>
+</Layout>
