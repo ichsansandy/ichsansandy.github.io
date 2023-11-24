@@ -28,13 +28,19 @@ module.exports = {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				float: {
+					'25%': { transform: 'translateY(-10px)' },
+					'50%': { transform: 'translateY(10px)' },
+					'75%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				break: 'break-down linear forwards',
 				'fade-in': 'fade-in linear forwards',
 				'spin-slower': 'spin 35s ease infinite',
-				'spin-slow': 'spin 25s ease-in-out infinite reverse'
+				'spin-slow': 'spin 25s ease-in-out infinite reverse',
+				float: 'float 7s ease infinite'
 			},
 			supports: {
 				'scroll-timeline': '(animation-timeline: scroll())',
