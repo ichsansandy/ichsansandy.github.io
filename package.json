@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
+    "@fontsource-variable/comfortaa": "^5.0.17",
+    "@fontsource/satisfy": "^5.0.17",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^3.1.4",
     "prettier": "^3.0.3",

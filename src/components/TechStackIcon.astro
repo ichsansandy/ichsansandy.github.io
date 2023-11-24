@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets'
+import reactIcon from '../assets/images/techstack/reactjs.svg'
+import tailwindIcon from '../assets/images/techstack/tailwind.svg'
+import javaIcon from '../assets/images/techstack/java.svg'
+import fireStoreIcon from '../assets/images/techstack/firestore.svg'
+import mysqlIcon from '../assets/images/techstack/mysql.svg'
+
+const iconData = new Map()
+
+iconData.set('React', reactIcon)
+iconData.set('TailwindCSS', tailwindIcon)
+iconData.set('Java', javaIcon)
+iconData.set('FireStore', fireStoreIcon)
+iconData.set('MySQL', mysqlIcon)
+
+interface Props {
+	icon: string
+}
+
+const { icon } = Astro.props
+
+const currentIcon = iconData.get(icon)
+---
+
+<div class="flex aspect-square w-5 items-center justify-center">
+	<Image src={currentIcon} alt={`${icon} icon`} />
+</div>

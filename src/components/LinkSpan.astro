@@ -7,6 +7,6 @@ interface Props {
 const { link, content } = Astro.props
 ---
 
-<span class="hover:text-accent">
+<span class="underline decoration-accent hover:text-accent hover:no-underline">
 	<a href={link} target="_blank" referrerpolicy="no-referrer"> {content}</a>
 </span>

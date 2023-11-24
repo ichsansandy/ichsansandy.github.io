@@ -33,6 +33,10 @@ module.exports = {
 					'25%': { transform: 'translateY(-10px)' },
 					'50%': { transform: 'translateY(10px)' },
 					'75%': { transform: 'translateY(-10px)' }
+				},
+				slide: {
+					from: { transform: 'translateX(0)' },
+					to: { transform: 'translateX(-100%)' }
 				}
 			},
 			animation: {
@@ -40,11 +44,16 @@ module.exports = {
 				'fade-in': 'fade-in linear forwards',
 				'spin-slower': 'spin 35s ease infinite',
 				'spin-slow': 'spin 25s ease-in-out infinite reverse',
-				float: 'float 7s ease infinite'
+				float: 'float 7s ease infinite',
+				slide: 'slide 12s linear infinite'
 			},
 			supports: {
 				'scroll-timeline': '(animation-timeline: scroll())',
 				'no-scroll-timeline': 'not (animation-timeline: scroll())'
+			},
+			fontFamily: {
+				satisfy: 'Satisfy, sans-serif',
+				comforta: 'Comfortaa Variable, sans-serif'
 			},
 			typography: ({ theme }) => ({
 				DEFAULT: {

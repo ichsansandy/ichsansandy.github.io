@@ -1,34 +1,84 @@
 ---
+import PortfolioContainer from '../components/PortfolioContainer.astro'
 import Layout from '../layouts/Layout.astro'
+import eye from '../assets/images/ilustration/eye.png'
+import { Image } from 'astro:assets'
+import '@fontsource/satisfy'
+import '@fontsource-variable/comfortaa'
+import LinkSpan from '../components/LinkSpan.astro'
 ---
 
 <Layout title="Aloha 🖐">
 	<main>
-		<section class="mx-[10vw] grid min-h-screen place-content-center py-16">
-			<h1 class="w-full text-center text-[17vw] leading-[1]">
-				<span class="font-extrabold">Webcase</span>
+		<section class="mx-[10vw] grid place-content-center py-24 sm:min-h-screen">
+			<h1 class="w-full text-center text-5xl leading-[1] md:text-[8vw]">
+				<span class="z-10 font-extrabold"
+					>Crafting
+					<br />
+					<Image class="inline-block w-24 md:w-[18vw]" src={eye} alt="eye" />
+					 your</span
+				>
+				<br />
+				<span
+					class="relative before:absolute before:inset-0 before:-z-10 before:scale-x-125 before:rounded-full before:bg-accent before:blur-[50px]"
+				>
+					<span
+						class="font-extraboldfont bg-gradient-to-br from-yellow-100 via-orange-300 to-purple-700 bg-clip-text font-satisfy text-transparent"
+						>Dream Website
+					</span>
+				</span>
 			</h1>
-			<p class="place-self-center text-center text-xs sm:text-base">
-				a regular template for your web showcase
-			</p>
+		</section>
+		<section class="mx-[10vw] grid place-content-center py-20">
+			<h1 class="w-full text-left text-5xl font-extrabold leading-[1] md:text-[5vw]">
+				<span class="text-outline text-transparent">My name is Ichsan</span>
+				<br />
+				<span>Fullstack developer</span>
+				<span class="text-outline text-transparent"> passionate in building</span>
+				<span
+					class="bg-gradient-to-tl from-yellow-300 via-orange-300 to-purple-700 bg-clip-text font-satisfy text-transparent"
+				>
+					Visually Stunning
+				</span>
+				<br />
+				<span class="text-outline text-transparent">&</span>
+				<span
+					class="bg-gradient-to-tl from-accent to-secondary bg-clip-text font-comforta text-transparent"
+				>
+					Optimized
+				</span>
+				<span class="text-outline text-transparent"> website</span>
+			</h1>
 		</section>
 		<section class="relative mx-[10vw]">
 			<div
-				class="flex min-h-[25vh] items-center justify-center before:absolute before:right-1 before:-z-10 before:h-1/2 before:w-3/4 before:animate-spin-slower before:rounded-bl-full before:rounded-tr-full before:bg-accent before:blur-3xl after:absolute after:-z-10 after:h-2/3 after:w-2/3 after:animate-spin-slow after:rounded-bl-full after:rounded-tr-full after:bg-secondary/80 after:blur-3xl mb-5 select-none"
+				class="flex min-h-[25vh] select-none items-center justify-center before:absolute before:right-1 before:-z-10 before:h-1/2 before:w-3/4 before:animate-spin-slower before:rounded-bl-full before:rounded-tr-full before:bg-accent before:blur-3xl after:absolute after:-z-10 after:h-2/3 after:w-2/3 after:animate-spin-slow after:rounded-bl-full after:rounded-tr-full after:bg-secondary/80 after:blur-3xl sm:mb-24"
 			>
-				<h1 class="w-full text-center text-[15vw] font-extrabold leading-[0.75]">Master Piece</h1>
-				<div class="absolute text-center text-[23vw] leading-[0.75] text-content/30">
-					Selected
-				</div>
+				<h1 class="w-full text-center text-[13vw] font-extrabold leading-[0.8]">Master Piece(s)</h1>
+				<div class="absolute text-center text-[31vw] leading-[0.75] text-content/30">Selected</div>
 			</div>
-			<div class="">
-				<div>Project 1</div>
-				<div>Project 2</div>
-				<div>Project 3</div>
-			</div>
+			<PortfolioContainer />
 		</section>
-		<section class="mx-[10vw] flex justify-center text-[min(120px,11vw)] leading-[1]">
-			<h1 class="w-full text-left">Reach Me</h1>
+		<section class="mx-[10vw] flex justify-center py-24">
+			<h1 class="relative text-center  font-extrabold ">
+				<span class="text-4xl md:text-[5vw]">Interested to work with me ?</span>
+				<br />
+				<span class="text-3xl font-normal md:text-[3vw] leading-snug"
+				>Let's connect and bring your ideas to life.</span
+				>
+				<br />
+				<span class="text-3xl font-normal md:text-[3vw]"
+					>Or send me an
+					<LinkSpan link="mailto:ichsan2668@gmail.com" content="email" />
+					 .
+				</span>
+			</h1>
 		</section>
 	</main>
 </Layout>
+
+<style>
+	.text-outline {
+		-webkit-text-stroke: 1.5px hsl(var(--color-content));
+	}
+</style>

@@ -17,6 +17,17 @@ const { title, author } = Astro.props
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- Material Icons Link -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<!-- Font Awesome Link -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | {author || 'Ichsan Sandy'}</title>
 		<ViewTransitions />
@@ -27,65 +38,65 @@ const { title, author } = Astro.props
 			<slot />
 		</div>
 		<Footer />
-	</body>
-</html>
-	<script>
-		const setTheme = () => {
-			const sun = document.querySelector('#sun')
-			const getTheme = () => localStorage.getItem('theme') || 'light'
-			document.documentElement.setAttribute('data-theme', getTheme())
-			getTheme() === 'light' ? sun?.classList.remove('night') : sun?.classList.add('night')
-			const button = document.querySelector('#darkmodebutton')
-			if (button) {
-				const isEventListenerAttached = button.hasAttribute('data-event-listener')
-				if (!isEventListenerAttached) {
-					button.addEventListener('click', () => {
-						console.log('click okay')
-						const sun = document.querySelector('#sun')
-						sun?.classList.toggle('night')
-						const nextTheme = getTheme() === 'light' ? 'dark' : 'light'
-						localStorage.setItem('theme', nextTheme)
-						document.documentElement.setAttribute('data-theme', nextTheme)
-					})
+		<script>
+			const setTheme = () => {
+				const sun = document.querySelector('#sun')
+				const getTheme = () => localStorage.getItem('theme') || 'light'
+				document.documentElement.setAttribute('data-theme', getTheme())
+				getTheme() === 'light' ? sun?.classList.remove('night') : sun?.classList.add('night')
+				const button = document.querySelector('#darkmodebutton')
+				if (button) {
+					const isEventListenerAttached = button.hasAttribute('data-event-listener')
+					if (!isEventListenerAttached) {
+						button.addEventListener('click', () => {
+							console.log('click okay')
+							const sun = document.querySelector('#sun')
+							sun?.classList.toggle('night')
+							const nextTheme = getTheme() === 'light' ? 'dark' : 'light'
+							localStorage.setItem('theme', nextTheme)
+							document.documentElement.setAttribute('data-theme', nextTheme)
+						})
+					}
 				}
 			}
-		}
 
-		setTheme()
-		document.addEventListener('astro:after-swap', setTheme)
-	</script>
+			setTheme()
+			document.addEventListener('astro:after-swap', setTheme)
+		</script>
 
-	<style>
-		@tailwind base;
-		@tailwind components;
-		@tailwind utilities;
+		<style>
+			@tailwind base;
+			@tailwind components;
+			@tailwind utilities;
 
-		@layer base {
-			:root {
-				--color-bkg: 210deg 40% 98%;
-				--color-content: 217deg 32.6% 17.5%;
-				--color-accent1: 288deg 95.8% 90.6%;
-				--color-accent2: 168deg 83.8% 78.2%;
-			}
-			@media (prefers-color-scheme: dark) {
+			@layer base {
 				:root {
+					--color-bkg: 210deg 40% 98%;
+					--color-content: 217deg 32.6% 17.5%;
+					--color-accent1: 288deg 95.8% 90.6%;
+					--color-accent2: 168deg 83.8% 78.2%;
+				}
+				@media (prefers-color-scheme: dark) {
+					:root {
+						--color-bkg: 217deg 32.6% 17.5%;
+						--color-content: 210deg 40% 98%;
+						--color-accent1: 288deg 95.8% 60.6%;
+						--color-accent2: 168deg 83.8% 48.2%;
+					}
+				}
+				:root[data-theme='dark'] {
 					--color-bkg: 217deg 32.6% 17.5%;
 					--color-content: 210deg 40% 98%;
 					--color-accent1: 288deg 95.8% 60.6%;
 					--color-accent2: 168deg 83.8% 48.2%;
 				}
+				:root[data-theme='cool'] {
+					--color-bkg: 217deg 32.6% 57.5%;
+					--color-content: 210deg 40% 38%;
+					--color-accent1: 288deg 95.8% 80.6%;
+					--color-accent2: 168deg 83.8% 48.2%;
+				}
 			}
-			:root[data-theme='dark'] {
-				--color-bkg: 217deg 32.6% 17.5%;
-				--color-content: 210deg 40% 98%;
-				--color-accent1: 288deg 95.8% 60.6%;
-				--color-accent2: 168deg 83.8% 48.2%;
-			}
-			:root[data-theme='cool'] {
-				--color-bkg: 217deg 32.6% 57.5%;
-				--color-content: 210deg 40% 38%;
-				--color-accent1: 288deg 95.8% 80.6%;
-				--color-accent2: 168deg 83.8% 48.2%;
-			}
-		}
-	</style>
+		</style>
+	</body>
+</html>

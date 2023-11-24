@@ -1,0 +1,71 @@
+---
+import nuxDekstop from '../assets/images/nux/nux-dekstop.png'
+import nuxMobile from '../assets/images/nux/nux-mobile.png'
+import kelarinDekstop from '../assets/images/kelar.in/kelar-in-dekstop.png'
+import kelarinMobile from '../assets/images/kelar.in/kelar-in-dekstop.png'
+import stockwiseDekstop from '../assets/images/stockwise/stockwise-dekstop.png'
+import stockwiseMobile from '../assets/images/stockwise/stockwise-mobile.png'
+import PortfolioCard from './PortfolioCard.astro'
+
+const portfolio = [
+	{
+		id: 'nux',
+		name: 'Nux Design',
+		month: 'August',
+		year: 2023,
+		img: nuxDekstop,
+		mobileImg: nuxMobile,
+		desc: 'Welcome to Nux Studio, where innovation meets imagination. Our design studio offers an exquisite blend of creativity and technology, crafting digital experiences that captivate and inspire',
+		acknoledgementStatement: 'This project was designed and initiated by',
+		acknoledgementLink: 'https://www.instagram.com/devsignerlabs/',
+		acknoledgementName: 'Devsigner Labs',
+		sourceCode: 'https://github.com/ichsansandy/nux-landingpage',
+		livePreview: 'https://nux-landingpage.vercel.app/',
+		role: 'Frontend Developer, Transform figma design to a website, Responsive Design',
+		timeline: '2 Days',
+		techStack: ["React", "TailwindCSS"]
+	},
+	{
+		id: 'stockwise',
+		name: 'Stockwise',
+		month: 'July',
+		year: 2023,
+		img: stockwiseDekstop,
+		mobileImg: stockwiseMobile,
+		desc: 'Welcome to Stockwise, your ultimate destination for market insights and financial wisdom. Our cutting-edge app provides real-time data and analysis for 100 leading Nasdaq companies, empowering you to make informed investment decisions with confidence.',
+		acknoledgementStatement: 'The design is inspired from',
+		acknoledgementLink: 'https://www.behance.net/sakwadesignstudio',
+		acknoledgementName: 'Nelson Sakwa',
+		sourceCode: 'https://github.com/ichsansandy/stock-wise',
+		livePreview: 'https://stock-wise.vercel.app/',
+		role: 'Frontend Developer, Dekstop Version Design, UI-UX Design',
+		timeline:
+			'10 Days making the website, 5 Days design and create Desktop Version, 5 Days Add more interactive feature like Theme Change and About Page',
+		techStack: []
+	},
+	{
+		id: 'kelarin',
+		name: 'Kelar.in',
+		month: 'April',
+		year: 2022,
+		img: kelarinDekstop,
+		mobileImg: kelarinMobile,
+		desc: "Say hello to kelar.in, a revolutionary project management designed to take your team's productivity to the next level. It has messaging and notification feature to support your whole team activity.",
+		acknoledgementStatement:
+			'This is a final project to complete Web & Mobile Development courses at',
+		acknoledgementLink: 'https://www.g2academy.co/',
+		acknoledgementName: 'G2 Academy',
+		sourceCode: 'https://github.com/ichsansandy/kelar.in',
+		livePreview: '',
+		role: 'Fullstack Developer, UI-UX Design, Mobile Apps Developer, ERD Design, Microservice Architecture',
+		timeline: '1 Month creating the server, 15 Days website design, 15 Days mobile apps design, 1 Month Integrating the backend and frontend',
+		techStack: []
+	}
+]
+---
+
+<div class="grid gap-3">
+	{portfolio.map((p) => <PortfolioCard portfolio={p} />)}
+</div>
+
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>

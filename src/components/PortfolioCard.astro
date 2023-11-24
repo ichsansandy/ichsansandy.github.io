@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets'
+import PortfolioSubtitle from './PortfolioSubtitle.astro'
+import LinkSpan from './LinkSpan.astro'
+
+interface Props {
+	portfolio: {
+		id: string
+		name: string
+		img: ImageMetadata
+		mobileImg: ImageMetadata
+		month: string
+		year: number
+		desc: string
+		acknoledgementStatement: string
+		acknoledgementLink: string
+		acknoledgementName: string
+		sourceCode: string
+		livePreview: string
+		role: string
+		timeline: string
+		techStack: Array<string>
+	}
+}
+
+const { portfolio } = Astro.props
+---
+
+<div class="relative">
+	<h6 class="mb-0">
+		<button
+			class="rounded-t-1 group relative flex w-full cursor-pointer items-center gap-5 border-b border-solid border-content/20 p-4 text-left text-2xl font-semibold text-content transition-all ease-in sm:text-4xl"
+			data-collapse-target={portfolio.id}
+		>
+			<span>{portfolio.name}</span>
+			<i class="fas fa-circle hidden text-base sm:block"></i>
+			<span class="hidden gap-2 sm:flex">
+				<span>{portfolio.month}</span>
+				<span>{portfolio.year}</span>
+			</span>
+			<i
+				class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"
+			></i>
+			<div
+				class="absolute right-16 w-3/12 opacity-0 transition-opacity duration-300 group-open:opacity-0 group-hover:opacity-100"
+			>
+				<Image
+					src={portfolio.img}
+					alt="Portfolio Image"
+					class="aspect-[7/5] rounded-lg object-cover"
+				/>
+			</div>
+		</button>
+	</h6>
+	<div
+		data-collapse={portfolio.id}
+		class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+	>
+		<div class="p-4 text-base leading-normal">
+			<Image src={portfolio.img} alt="Portfolio Image Dekstop" class="my-5 sm:hidden" />
+			<PortfolioSubtitle title="Overview" />
+			<p class="md:w-2/3">
+				{portfolio.desc}
+				<br />
+				<span>
+					{portfolio.acknoledgementStatement}
+					{' '}
+					<LinkSpan content={portfolio.acknoledgementName} link={portfolio.acknoledgementLink} />
+				</span>
+			</p>
+
+			<div class="flex flex-col gap-5 py-5 sm:flex-row sm:pl-16">
+				<div class="h-fit animate-float sm:block sm:w-[300px]">
+					<Image src={portfolio.mobileImg} alt="Portfolio Image mobile" class="h-full w-full" />
+				</div>
+				<div class="flex flex-col gap-5 sm:mt-5">
+					<div>
+						<PortfolioSubtitle title="My Role" />
+						<p>{portfolio.role}</p>
+					</div>
+					<div>
+						<PortfolioSubtitle title="Timeline" />
+						<p>{portfolio.timeline}</p>
+					</div>
+					<div>
+						<PortfolioSubtitle title="Tech Stack" />
+						<div></div>
+					</div>
+					<div>
+						<PortfolioSubtitle title="Source Code and Live Preview" />
+						<div class="sm:item-start flex items-center gap-5">
+							<a
+								class={`flex aspect-square w-12 items-center justify-center rounded-lg bg-content/30 ${
+									!portfolio.sourceCode && 'cursor-not-allowed'
+								}`}
+								href={portfolio.sourceCode}
+								target="_blank"
+								referrerpolicy="no-referrer"
+							>
+								<i class="fab fa-github text-[30px]"></i>
+							</a>
+							<a
+								class={`flex aspect-square w-12 items-center justify-center rounded-lg bg-content/30 ${
+									!portfolio.livePreview && 'cursor-not-allowed opacity-30'
+								}`}
+								href={portfolio.livePreview}
+								target="_blank"
+								referrerpolicy="no-referrer"
+							>
+								<i class="fa-solid fa-eye text-[25px]"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

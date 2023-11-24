@@ -11,7 +11,7 @@ export const getStaticPaths = async ({ paginate }) => {
 	allBlogs.sort(sortBlogByDate)
 
 	// Return a paginated collection of paths for all posts
-	return paginate(allBlogs, { pageSize: 4 })
+	return paginate(allBlogs, { pageSize: 3 })
 }
 
 const { page } = Astro.props
