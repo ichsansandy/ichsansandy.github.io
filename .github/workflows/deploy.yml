@@ -34,6 +34,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Debug Deployment Inputs
+        run: echo "${{ toJson(inputs) }}"
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+  
+      - name: Debug Deployment Outputs
+        run: echo "${{ toJson(steps.deployment.outputs) }}"
